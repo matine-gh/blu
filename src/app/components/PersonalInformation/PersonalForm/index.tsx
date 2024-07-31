@@ -18,7 +18,7 @@ export default function PersonalForm() {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit} className={'md:grid grid-cols-5 grid-rows-4 gap-y-8 gap-x-4 [&>*]:max-w-72'}>
+        <form onSubmit={formik.handleSubmit} className={'md:grid grid-cols-5 grid-rows-4 gap-y-8 gap-x-4 max-md:space-y-8 [&>*]:max-w-72'}>
             <div className="col-span-2">
                 <label htmlFor="firstName">نام</label>
                 <input
@@ -46,6 +46,7 @@ export default function PersonalForm() {
                     id="nid"
                     name="nid"
                     type="text"
+                    dir={'ltr'}
                     onChange={formik.handleChange}
                     value={formik.values.nid}
                 />
@@ -67,6 +68,7 @@ export default function PersonalForm() {
                     id="phoneNumber"
                     name="phoneNumber"
                     type="text"
+                    dir={'ltr'}
                     onChange={formik.handleChange}
                     value={formik.values.phoneNumber}
                 />
