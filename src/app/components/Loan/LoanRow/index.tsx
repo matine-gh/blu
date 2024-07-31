@@ -6,8 +6,11 @@ import Icons from "../../../../../public/Icons";
 export default function LoanRow({...loan}: LoanInterface) {
     const [showMore, setShowMore] = useState<boolean>(false);
 
+    function onSelectLoan() {
+        console.log('choose')
+    }
     return (
-        <div className={'p-4 border-4 rounded-xl'}>
+        <div className={'p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06 divide-y-2'}>
             <div className={'flex items-center justify-between'}>
                 <div className={'space-y-3'}>
                     <strong className={'space-x-1'}>
@@ -21,11 +24,11 @@ export default function LoanRow({...loan}: LoanInterface) {
                         <span>{loan.amount.toLocaleString()}ریال</span>
                     </p>
                 </div>
-                <div className={'flex gap-4'}>
+                <div className={'flex gap-4 flex-wrap-reverse justify-end'}>
                     <button className={'hover:text-primary-10'} onClick={()=>setShowMore(!showMore)}>
                         <Icons name={'more'} />
                     </button>
-                    <button>انتخاب</button>
+                    <button className={'primary-button'+' '+'md:py-2 md:px-6'} onClick={onSelectLoan}>انتخاب</button>
                 </div>
             </div>
             {showMore &&
