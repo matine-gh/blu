@@ -17,9 +17,7 @@ export default function HistoryTable() {
     useEffect(() => {
         if (loansHistoryStates) {
             setLoansHistoryList(loansHistoryStates)
-            console.log('aaaaa')
         }
-        console.log('loansHistoryStates', loansHistoryStates)
     }, [loansHistoryStates]);
 
     const tableHeaders = [
