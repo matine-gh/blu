@@ -5,6 +5,7 @@ import calculatePayment from "@/app/utils/calculatePayment";
 import {Fragment, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {postLoansLoading} from "@/store/postLoans/action";
+import {v4 as uuidv4} from 'uuid';
 
 export default function PreFactor({setStep}: (arg: number)=> void) {
 
@@ -61,6 +62,7 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
                             type={"submit"}
                             disabled={!checked}
                             onClick={()=>{
+                                loanData.id = uuidv4()
                                 dispatch(postLoansLoading(loanData))
                             }}
                     >ثبت درخواست</button>
