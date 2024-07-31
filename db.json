@@ -1,6 +1,18 @@
 {
   "loans": [
-    { "id": "1", "name": "a title"},
-    { "id": "2", "name": "another title"}
+    {
+      "id": "4",
+      "createdDate": "2021-12-10T08:15:00.987Z",
+      "name": "وام تحصیلی",
+      "repaymentType": [
+        {
+          "name": "84 ماهه",
+          "value": 84
+        }
+      ],
+      "amount": 2000000000,
+      "interestRate": 3.8,
+      "penaltyRate": 3.5
+    }
   ]
 }
