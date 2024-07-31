@@ -25,7 +25,7 @@ export default function LoanRow({...loan}: LoanInterface) {
                     <button className={'hover:text-primary-10'} onClick={()=>setShowMore(!showMore)}>
                         <Icons name={'more'} />
                     </button>
-                    <button className={'bg-primary-10 hover:bg-primary text-secondary-01 p-2 rounded-lg'}>انتخاب</button>
+                    <button>انتخاب</button>
                 </div>
             </div>
             {showMore &&
