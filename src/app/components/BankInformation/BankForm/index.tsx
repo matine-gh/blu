@@ -1,8 +1,7 @@
 'use client'
 
 import { useFormik } from 'formik';
-
-export default function BankForm() {
+export default function BankForm({setStep}: (arg: number)=>void) {
 
     const formik = useFormik({
         initialValues: {
@@ -12,6 +11,7 @@ export default function BankForm() {
         },
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
+            setStep(4)
         },
     });
 

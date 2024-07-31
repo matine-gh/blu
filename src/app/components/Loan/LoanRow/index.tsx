@@ -1,14 +1,16 @@
 'use client'
-import {LoanInterface} from "@/app/components/Loan/loan.interface";
 import {useState} from "react";
 import Icons from "../../../../../public/Icons";
+import {LoanRowInterface} from "@/app/components/Loan/LoanRow/loanRow.interface";
 
-export default function LoanRow({...loan}: LoanInterface) {
+export default function LoanRow({step, setStep, ...loan }: LoanRowInterface ) {
     const [showMore, setShowMore] = useState<boolean>(false);
 
     function onSelectLoan() {
-        console.log('choose')
+        sessionStorage.setItem("selectedLoanInformation", JSON.stringify(loan));
+        setStep(2)
     }
+
     return (
         <div className={'p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06'}>
             <div className={'flex items-center justify-between'}>

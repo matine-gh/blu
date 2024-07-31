@@ -1,8 +1,7 @@
 'use client'
-
 import { useFormik } from 'formik';
 
-export default function PersonalForm() {
+export default function PersonalForm({setStep}: (arg: number)=> void) {
 
 
     const userInformation = sessionStorage.getItem("userInformation");
@@ -10,8 +9,8 @@ export default function PersonalForm() {
     const formik = useFormik({
         initialValues: {...JSON.parse(userInformation)},
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
             sessionStorage.setItem("userInformation", JSON.stringify(values));
+            setStep(3)
         },
     });
 
