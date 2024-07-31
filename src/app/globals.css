@@ -6,4 +6,13 @@
     h1 {
         @apply text-2xl font-bold my-8;
     }
+    input {
+        @apply border-secondary border-2 block rounded-lg w-full h-10 focus:outline-primary
+    }
+    .container {
+        @apply m-4 w-auto max-sm:m-2.5
+    }
+    .primary-button {
+        @apply bg-primary-10 hover:bg-primary text-secondary-01 p-2 rounded-lg
+    }
 }

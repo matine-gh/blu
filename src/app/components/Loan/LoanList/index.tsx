@@ -2,7 +2,7 @@ import * as loanInfo from "@/loanInfo.json";
 import LoanRow from "@/app/components/Loan/LoanRow";
 export default function LoansList() {
     return (
-        <div className={' m-4'}>
+        <div className={'container'}>
             <ul className={'space-y-6'}>
                 {
                     loanInfo.data.map ((loan) => {
