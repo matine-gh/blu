@@ -79,7 +79,7 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
 
                     <div className="col-span-2 row-start-2">
                         <label htmlFor="nid">کد ملی</label>
-                        <Field name="nid" type={'number'} validate={validateNid} />
+                        <Field name="nid" type={'text'} validate={validateNid} />
                         {errors.nid && touched.nid && <div>{errors.nid}</div>}
                     </div>
 
