@@ -6,7 +6,7 @@ import {Fragment, useState} from "react";
 import {useDispatch} from "react-redux";
 import {postLoansLoading} from "@/store/postLoans/action";
 
-export default function PreFactor() {
+export default function PreFactor({setStep}: (arg: number)=> void) {
 
     const [checked, setChecked] = useState<boolean>(false)
 
@@ -49,9 +49,12 @@ export default function PreFactor() {
                     </div>
                     <button className={'submit-button'}
                             type={"submit"}
-                            disabled={!checked} onClick={()=>{
-                        dispatch(postLoansLoading(loanData))
-                    } }>ثبت درخواست</button>
+                            disabled={!checked}
+                            onClick={()=>{
+                                dispatch(postLoansLoading(loanData))
+                                setStep(5)
+                            }}
+                    >ثبت درخواست</button>
                 </div>
             </div>
         </div>

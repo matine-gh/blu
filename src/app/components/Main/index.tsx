@@ -4,6 +4,7 @@ import PersonalInformation from "@/app/components/PersonalInformation";
 import BankInformation from "@/app/components/BankInformation";
 import PreFactor from "@/app/components/PreFactor";
 import {useState} from "react";
+import ConfirmPurchase from "@/app/components/ConfirmPurchase";
 
 export default function Main() {
 
@@ -15,7 +16,8 @@ export default function Main() {
             {step === 1 && <Loan setStep={setStep} /> }
             {step === 2 && <PersonalInformation setStep={setStep} /> }
             {step >= 3 && <BankInformation setStep={setStep} /> }
-            {step === 4 && <PreFactor />}
+            {step === 4 && <PreFactor setStep={setStep} />}
+            {step === 5 && <ConfirmPurchase  setStep={setStep}/>}
         </div>
     )
 }
