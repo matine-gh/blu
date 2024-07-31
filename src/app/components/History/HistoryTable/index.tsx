@@ -30,9 +30,9 @@ export default function HistoryTable() {
         'نرخ جریمه',
     ]
     return (
-        <div className="relative overflow-x-auto">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div className={'container'+' '+"overflow-x-auto text-center m-auto rounded-xl border-primary-11 border-2"}>
+            <table className="w-full text-sm">
+                <thead className="text-xs text-secondary-03 bg-primary-11">
                 <tr>{
                     tableHeaders.map((item) => {
                         return (
@@ -46,10 +46,10 @@ export default function HistoryTable() {
                 <tbody>
                 {loansHistoryList.length && loansHistoryList.map((loan) => {
                     return(
-                        <tr key={loan.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr key={loan.id} className=" divide-y-2 divide-primary-11">
+                            <td className="px-6 py-4">
                                 {loan.name}
-                            </th>
+                            </td>
                             <td className="px-6 py-4">
                                 {loan.amount}
                             </td>
