@@ -2,6 +2,7 @@
 import {Field, Form, Formik} from 'formik';
 import {DatePicker} from 'zaman';
 import {useEffect, useState} from "react";
+import {isNidValid} from "@/app/utils/nidValidation";
 
 function validateFirstname(value) {
     let error;
@@ -24,10 +25,7 @@ function validateNid(value) {
     if (!value) {
         error = 'کد ملی اجباری است';
     }
-    else if (value.length !== 10){
-        error = 'کد ملی نامعتبر است.'
-    }
-    else if (!/^[0-9]+/i.test(value)) {
+    else if (value.length !== 10 || !/^[0-9]+/i.test(value) ||  !isNidValid(value) ){
         error = 'کد ملی نامعتبر است.'
     }
     return error;
