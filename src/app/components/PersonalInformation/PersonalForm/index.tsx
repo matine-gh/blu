@@ -4,16 +4,14 @@ import { useFormik } from 'formik';
 
 export default function PersonalForm() {
 
+
+    const userInformation = sessionStorage.getItem("userInformation");
+
     const formik = useFormik({
-        initialValues: {
-            firstName: '',
-            lastName: '',
-            nid: '',
-            birthday: '',
-            phoneNumber: '',
-        },
+        initialValues: {...JSON.parse(userInformation)},
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
+            sessionStorage.setItem("userInformation", JSON.stringify(values));
         },
     });
 
