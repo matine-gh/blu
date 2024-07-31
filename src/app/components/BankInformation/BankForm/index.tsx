@@ -38,7 +38,6 @@ export default function BankForm() {
                         dir={'ltr'}
                         onChange={formik.handleChange}
                         value={formik.values.sheba}
-                        focus="setCursorPosition(this, 3)"
                     />
                 </div>
                 <div>
