@@ -7,7 +7,7 @@ import {isNidValid} from "@/app/utils/nidValidation";
 function validateFirstname(value) {
     let error;
     if (!value) {
-        error = 'نام اجبرای است';
+        error = 'نام اجباری است';
         return error;
     }
 }
