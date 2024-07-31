@@ -96,7 +96,7 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
 
                     <div className={'col-span-2 row-start-3'}>
                         <label htmlFor="phoneNumber">شماره تماس</label>
-                        <Field name="phoneNumber" type={'number'} validate={validatePhoneNumber} />
+                        <Field name="phoneNumber" type={'text'} validate={validatePhoneNumber} />
                         {errors.phoneNumber && touched.phoneNumber && <div>{errors.phoneNumber}</div>}
                     </div>
 
