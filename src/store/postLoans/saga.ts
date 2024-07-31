@@ -8,7 +8,7 @@ function* ApiCall(loanData: any): Generator<any> {
         yield call(
             axiosInterceptorInstance.post,
             `/loans`,
-            loanData,
+            loanData.loanData,
             {
                 timeout: Number(process.env.API_TIME_OUT),
             },
