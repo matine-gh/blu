@@ -12,7 +12,7 @@ export default function LoanRow({step, setStep, ...loan }: LoanRowInterface ) {
     }
 
     return (
-        <div className={'p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06'}>
+        <div className={'bg-primary-01 p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06'}>
             <div className={'flex items-center justify-between'}>
                 <div className={'space-y-3'}>
                     <strong className={'space-x-1'}>

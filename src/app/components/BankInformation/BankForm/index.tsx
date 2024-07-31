@@ -50,37 +50,39 @@ export default function BankForm({setStep}: (arg: number)=>void) {
     });
 
     return (
-        <Formik
-            initialValues={{ accountNumber: '',
-                sheba: 'IR',
-                annualAverageAmount: 0, }}
-            onSubmit={values => setStep(4)}
-        >
-            {({ errors, touched }) => (
-                <Form>
-                    <div>
-                        <label htmlFor="accountNumber">شماره حساب</label>
-                        <Field validate={validateAccountNumber} name="accountNumber" type="text" />
-                        {errors.accountNumber && touched.accountNumber ? <div>{errors.accountNumber}</div> : null}
-                    </div>
-                    <div>
-                        <label htmlFor="sheba">شماره شبا</label>
-                        <Field validate={validateSheba} name="sheba" />
-                        {errors.sheba && touched.sheba ? (
-                            <div>{errors.sheba}</div>
-                        ) : null}
-                    </div>
-                    <div>
-                        <label htmlFor="annualAverageAmount">میانگین ریالی موجودی سالیانه</label>
-                        <Field validate={validateAnnualAverageAmount} type={'number'} name="annualAverageAmount" />
-                        {errors.annualAverageAmount && touched.annualAverageAmount ? (
-                            <div>{errors.annualAverageAmount}</div>
-                        ) : null}
-                    </div>
-                    <button type="submit" className={'submit-button'+' '+''}>ثبت اطلاعات حساب</button>
-                </Form>
-            )}
-        </Formik>
+        <div className={'formContainer'}>
+            <Formik
+                initialValues={{ accountNumber: '',
+                    sheba: 'IR',
+                    annualAverageAmount: 0, }}
+                onSubmit={values => setStep(4)}
+            >
+                {({ errors, touched }) => (
+                    <Form className={'md:grid grid-cols-3 grid-rows-4 gap-4'}>
+                        <div className={'col-span-2 max-w-96'}>
+                            <label htmlFor="accountNumber">شماره حساب</label>
+                            <Field validate={validateAccountNumber} name="accountNumber" type="text" />
+                            {errors.accountNumber && touched.accountNumber ? <div>{errors.accountNumber}</div> : null}
+                        </div>
+                        <div className={'col-span-2 row-start-2 max-w-96'}>
+                            <label htmlFor="sheba">شماره شبا</label>
+                            <Field validate={validateSheba} name="sheba" />
+                            {errors.sheba && touched.sheba ? (
+                                <div>{errors.sheba}</div>
+                            ) : null}
+                        </div>
+                        <div className={'col-span-2 row-start-3 max-w-96'}>
+                            <label htmlFor="annualAverageAmount">میانگین ریالی موجودی سالیانه</label>
+                            <Field validate={validateAnnualAverageAmount} type={'number'} name="annualAverageAmount" />
+                            {errors.annualAverageAmount && touched.annualAverageAmount ? (
+                                <div>{errors.annualAverageAmount}</div>
+                            ) : null}
+                        </div>
+                        <button type="submit" className={'submit-button'+' '+'col-span-1 col-start-2 row-start-4'}>ثبت اطلاعات حساب</button>
+                    </Form>
+                )}
+            </Formik>
+        </div>
         // <div>
         //     <form onSubmit={formik.handleSubmit} className={'space-y-8 [&>*]:max-w-72'}>
         //         <div>

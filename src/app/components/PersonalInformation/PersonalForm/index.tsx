@@ -53,21 +53,22 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
     }, [birthDate]);
 
     return (
-        <Formik
-            initialValues={{...JSON.parse(userInformation)}}
-            onSubmit={values => {
-                // same shape as initial values
-                sessionStorage.setItem("userInformation", JSON.stringify(values));
-                setStep(3)
-            }}
-        >
-            {({ errors, touched }) => (
-                <Form className={'md:grid grid-cols-5 grid-rows-4 gap-y-8 gap-x-4 max-md:space-y-8 [&>*]:max-w-72'}>
-                    <div className="col-span-2">
-                        <label htmlFor="firstName">نام</label>
-                        <Field name="firstName" validate={validateFirstname} />
-                        {errors.firstName && touched.firstName && <div>{errors.firstName}</div>}
-                    </div>
+        <div className={'formContainer'}>
+            <Formik
+                initialValues={initValue}
+                onSubmit={values => {
+                    // same shape as initial values
+                    sessionStorage.setItem("userInformation", JSON.stringify(values));
+                    setStep(3)
+                }}
+            >
+                {({ errors, touched }) => (
+                    <Form className={'md:grid grid-cols-5 grid-rows-4 gap-y-8 gap-x-4 max-md:space-y-8 [&>*]:max-w-72'}>
+                        <div className="col-span-2">
+                            <label htmlFor="firstName">نام</label>
+                            <Field name="firstName" validate={validateFirstname} />
+                            {errors.firstName && touched.firstName && <div>{errors.firstName}</div>}
+                        </div>
 
                     <div className="col-span-2 col-start-4">
                         <label htmlFor="lastName">نام خانوادگی</label>
