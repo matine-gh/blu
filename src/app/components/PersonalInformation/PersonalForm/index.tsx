@@ -51,7 +51,7 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
     useEffect(() => {
         console.log("B", birthDate)
     }, [birthDate]);
-
+    const initValue = userInformation ? {...JSON.parse(userInformation)} : {phoneNumber :"09"}
     return (
         <div className={'formContainer'}>
             <Formik
@@ -70,44 +70,43 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
                             {errors.firstName && touched.firstName && <div>{errors.firstName}</div>}
                         </div>
 
-                    <div className="col-span-2 col-start-4">
-                        <label htmlFor="lastName">نام خانوادگی</label>
-                        <Field name="lastName" validate={validateLastname} />
-                        {errors.lastName && touched.lastName && <div>{errors.lastName}</div>}
-                    </div>
+                        <div className="col-span-2 col-start-4">
+                            <label htmlFor="lastName">نام خانوادگی</label>
+                            <Field name="lastName" validate={validateLastname} />
+                            {errors.lastName && touched.lastName && <div>{errors.lastName}</div>}
+                        </div>
 
-                    <div className="col-span-2 row-start-2">
-                        <label htmlFor="nid">کد ملی</label>
-                        <Field name="nid" type={'text'} validate={validateNid} />
-                        {errors.nid && touched.nid && <div>{errors.nid}</div>}
-                    </div>
+                        <div className="col-span-2 row-start-2">
+                            <label htmlFor="nid">کد ملی</label>
+                            <Field name="nid" type={'text'} validate={validateNid} />
+                            {errors.nid && touched.nid && <div>{errors.nid}</div>}
+                        </div>
 
-                    <div className="group col-span-2 col-start-4 row-start-2">
-                        <label htmlFor="birthday" >تاریخ تولد</label>
-                        <DatePicker
-                            inputClass={'relative flex justify-between items-center ' +
-                                'rounded-lg focus:outline-primary '+
-                                'h-10 w-full border-2 border-secondary ' +
-                                'p-2 mt-2'}
-                            onChange={(e) => {
-                                setBirthDate(String(e.value))
-                            }}
-                            position={"center"}/>
-                    </div>
+                        <div className="group col-span-2 col-start-4 row-start-2">
+                            <label htmlFor="birthday" >تاریخ تولد</label>
+                            <DatePicker
+                                inputClass={'relative flex justify-between items-center ' +
+                                    'rounded-lg focus:outline-primary '+
+                                    'h-10 w-full border-2 border-secondary ' +
+                                    'p-2 mt-2'}
+                                onChange={(e) => {
+                                    setBirthDate(String(e.value))
+                                }}
+                                position={"center"}/>
+                        </div>
 
-                    <div className={'col-span-2 row-start-3'}>
-                        <label htmlFor="phoneNumber">شماره تماس</label>
-                        <Field name="phoneNumber" type={'text'} validate={validatePhoneNumber} />
-                        {errors.phoneNumber && touched.phoneNumber && <div>{errors.phoneNumber}</div>}
-                    </div>
-
-
-                    <button className={'submit-button'+' '+'col-start-3 row-start-4 '}
-                            type="submit" disabled={Object.keys(errors).length > 0}>ثبت اطلاعات</button>
-                </Form>
-            )}
-        </Formik>
+                        <div className={'col-span-2 row-start-3'}>
+                            <label htmlFor="phoneNumber">شماره تماس</label>
+                            <Field name="phoneNumber" type={'text'} validate={validatePhoneNumber} />
+                            {errors.phoneNumber && touched.phoneNumber && <div>{errors.phoneNumber}</div>}
+                        </div>
 
 
+                        <button className={'submit-button'+' '+'col-start-3 row-start-4 '}
+                                type="submit" disabled={Object.keys(errors).length > 0}>ثبت اطلاعات</button>
+                    </Form>
+                )}
+            </Formik>
+        </div>
     )
 }
