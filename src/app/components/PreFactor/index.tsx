@@ -2,8 +2,8 @@
 import ToKeyValue from "@/app/components/Common/ToKeyValue";
 import calculatePenalty from "@/app/utils/calculatePenalty";
 import calculatePayment from "@/app/utils/calculatePayment";
-import {Fragment, useState} from "react";
-import {useDispatch} from "react-redux";
+import {Fragment, useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import {postLoansLoading} from "@/store/postLoans/action";
 
 export default function PreFactor({setStep}: (arg: number)=> void) {
@@ -12,6 +12,16 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
 
     const dispatch = useDispatch();
     const loanData = JSON.parse(sessionStorage.getItem('selectedLoanInformation'))
+
+    const postLoanStates = useSelector((state: any)=>state.postLoan);
+
+    useEffect(() => {
+        if (postLoanStates.isDone) {
+            sessionStorage.clear()
+            setStep(5)
+        }
+
+    }, [postLoanStates.isDone]);
 
     const dataArray = [
         {name: 'مبلغ', value: loanData.amount},
@@ -52,7 +62,6 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
                             disabled={!checked}
                             onClick={()=>{
                                 dispatch(postLoansLoading(loanData))
-                                setStep(5)
                             }}
                     >ثبت درخواست</button>
                 </div>
