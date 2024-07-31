@@ -1,4 +1,4 @@
 
 export default function calculatePenalty(amount: number, penaltyRate: number) {
-    return  amount*penaltyRate
+    return  Math.ceil(amount*penaltyRate/100)
 }
