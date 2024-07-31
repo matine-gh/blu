@@ -1,9 +1,6 @@
 'use client'
-import {Field, Form, Formik, useFormik} from 'formik';
+import {Field, Form, Formik} from 'formik';
 import {DatePicker} from 'zaman';
-
-
-import * as Yup from 'yup';
 import {useEffect, useState} from "react";
 
 function validateFirstname(value) {
@@ -32,16 +29,6 @@ function validateNid(value) {
     }
     else if (!/^[0-9]+/i.test(value)) {
         error = 'کد ملی نامعتبر است.'
-    }
-    return error;
-}
-
-
-
-function validateUsername(value) {
-    let error;
-    if (value === 'admin') {
-        error = 'Nice try!';
     }
     return error;
 }
@@ -76,7 +63,7 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
                 setStep(3)
             }}
         >
-            {({ errors, touched, isValidating }) => (
+            {({ errors, touched }) => (
                 <Form className={'md:grid grid-cols-5 grid-rows-4 gap-y-8 gap-x-4 max-md:space-y-8 [&>*]:max-w-72'}>
                     <div className="col-span-2">
                         <label htmlFor="firstName">نام</label>
