@@ -1,6 +1,7 @@
 import Loan from "@/app/components/Loan";
 import PersonalInformation from "@/app/components/PersonalInformation";
 import BankInformation from "@/app/components/BankInformation";
+import PreFactor from "@/app/components/PreFactor";
 
 export default function Main() {
     return (
@@ -8,6 +9,7 @@ export default function Main() {
             <Loan />
             <PersonalInformation />
             <BankInformation />
+            <PreFactor />
         </div>
     )
 }
