@@ -15,4 +15,7 @@
     .primary-button {
         @apply bg-primary-10 hover:bg-primary text-secondary-01 p-2 rounded-lg
     }
+    .submit-button {
+        @apply bg-primary-10 hover:bg-primary text-secondary-01 p-2 rounded-lg my-4 max-h-12 min-w-44 max-md:my-4 w-full
+    }
 }

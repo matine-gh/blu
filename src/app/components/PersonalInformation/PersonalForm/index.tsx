@@ -71,7 +71,7 @@ export default function PersonalForm() {
                     value={formik.values.phoneNumber}
                 />
             </div>
-            <button className={'primary-button'+' '+'col-start-3 row-start-4 max-md:my-4 max-h-12'} type="submit">ثبت اطلاعات</button>
+            <button className={'submit-button'+' '+'col-start-3 row-start-4 '} type="submit">ثبت اطلاعات</button>
         </form>
     )
 }
