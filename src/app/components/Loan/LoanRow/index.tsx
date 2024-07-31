@@ -10,7 +10,7 @@ export default function LoanRow({...loan}: LoanInterface) {
         console.log('choose')
     }
     return (
-        <div className={'p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06 divide-y-2'}>
+        <div className={'p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06'}>
             <div className={'flex items-center justify-between'}>
                 <div className={'space-y-3'}>
                     <strong className={'space-x-1'}>
