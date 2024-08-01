@@ -2,7 +2,7 @@ import Icons from "../../../../public/Icons";
 import {useRouter} from "next/navigation";
 
 
-export default function ConfirmPurchase({setStep}: (arg: number)=> void) {
+export default function ConfirmPurchase() {
 
     const router = useRouter();
 
