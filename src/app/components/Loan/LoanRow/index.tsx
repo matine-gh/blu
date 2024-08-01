@@ -14,7 +14,7 @@ export default function LoanRow({step, setStep, ...loan }: LoanRowInterface ) {
     }
 
     return (
-        <div className={'bg-primary-01 p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06'}>
+        <div className={'group transition-all duration-3000 bg-primary-01 p-4 border-4 border-primary rounded-xl divide-y divide-dashed divide-secondary-06'}>
             <div className={'flex items-center justify-between'}>
                 <div className={'space-y-3'}>
                     <strong>
@@ -23,7 +23,7 @@ export default function LoanRow({step, setStep, ...loan }: LoanRowInterface ) {
                     <ToKeyValue  name={"مبلغ"} value={`${toFarsiNumber(loan.amount.toLocaleString())} ریال`}/>
                 </div>
                 <div className={'flex gap-4 flex-wrap-reverse justify-end'}>
-                    <button className={'hover:text-primary-10'} onClick={()=>setShowMore(!showMore)}>
+                    <button className={'hover:text-primary-10 group-hover:animate-bounce text-primary-11'} onClick={()=>setShowMore(!showMore)}>
                         <Icons name={'more'} />
                     </button>
                     <button className={'primary-button'+' '+'md:py-2 md:px-6'} onClick={onSelectLoan}>انتخاب</button>
