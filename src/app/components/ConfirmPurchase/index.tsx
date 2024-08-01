@@ -16,16 +16,10 @@ export default function ConfirmPurchase({setStep}: (arg: number)=> void) {
                         <Icons name={'success'} width={'72'} height={'72'}/>
                     </div>
                     <p>درخواست تسهیلات شما با موفقیت ثبت شد.</p>
-                    <div className={'flex justify-evenly'}>
-                        <button className={'primary-button'+' '+'min-w-32'}
-                                onClick={()=>router.replace('/history')}>
-                            مشاهده تاریخچه
-                        </button>
-                        <button className={'primary-button'+' '+'min-w-32'}
-                                onClick={()=>setStep(1)}>
-                            خانه
-                        </button>
-                    </div>
+                    <button className={'primary-button'+' '+'min-w-32'}
+                            onClick={()=>router.replace('/history')}>
+                        مشاهده تاریخچه
+                    </button>
                 </div>
             </div>
         </div>
