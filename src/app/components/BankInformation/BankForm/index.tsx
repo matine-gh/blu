@@ -37,25 +37,13 @@ function validateAnnualAverageAmount(value) {
 
 export default function BankForm({setStep}: (arg: number)=>void) {
 
-    const formik = useFormik({
-        initialValues: {
-            accountNumber: '',
-            sheba: 'IR',
-            annualAverageAmount: '',
-        },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-            setStep(4)
-        },
-    });
-
     return (
         <div className={'formContainer'}>
             <Formik
                 initialValues={{ accountNumber: '',
                     sheba: 'IR',
                     annualAverageAmount: 0, }}
-                onSubmit={values => setStep(4)}
+                onSubmit={() => setStep(4)}
             >
                 {({ errors, touched }) => (
                     <Form className={'md:grid grid-cols-3 grid-rows-4 gap-4'}>
