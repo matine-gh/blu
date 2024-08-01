@@ -1,7 +1,10 @@
 import LoansList from "@/app/components/Loan/LoanList";
 import Icons from "../../../../public/Icons";
+import {lazy, Suspense} from "react";
 
 export default function Loan({setStep}: (arg: number)=> void) {
+    const LoansList = lazy(() => import('@/app/components/Loan/LoanList/index'));
+
     return (
         <div>
             <div className={'flex justify-between items-center'}>
@@ -11,7 +14,9 @@ export default function Loan({setStep}: (arg: number)=> void) {
                     <Icons name={'back'} />
                 </a>
             </div>
-            <LoansList  setStep={setStep}/>
+            <Suspense fallback={'load'}>
+                <LoansList  setStep={setStep}/>
+            </Suspense>
         </div>
     )
 }
