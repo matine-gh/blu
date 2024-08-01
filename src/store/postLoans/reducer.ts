@@ -20,6 +20,7 @@ export default function postLoanReducer(state: any, action: any) {
             return {
                 ...state,
                 ...action.payload,
+                isDone: false,
             }
         case POST_LOANS_LOADING:
             return {
