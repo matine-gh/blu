@@ -61,7 +61,7 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
                     setStep(3)
                 }}
             >
-                {({ errors, touched }) => (
+                {({ errors, touched}) => (
                     <Form className={'md:grid grid-cols-5 grid-rows-4 gap-x-4 max-md:space-y-8 [&>*]:max-w-72 [&>*]:min-h-24'}>
                         <div className="col-span-2">
                             <label htmlFor="firstName">*نام</label>
