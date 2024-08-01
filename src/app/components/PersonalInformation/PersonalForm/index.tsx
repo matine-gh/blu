@@ -48,14 +48,16 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
     const [birthDate, setBirthDate] = useState<string>('');
     const userInformation = sessionStorage.getItem("userInformation");
 
-    const initValue = userInformation ? {...JSON.parse(userInformation)} : {phoneNumber :"09"}
+    const initValue = userInformation ? {...JSON.parse(userInformation)} : {phoneNumber :"09",firstName:"",lastName:"",nid:"",
+    }
 
     return (
         <div className={'formContainer'}>
             <Formik
                 initialValues={initValue}
                 onSubmit={values => {
-                    sessionStorage.setItem("userInformation", JSON.stringify(values));
+                    // values['birthDate'] = birthDate
+                    // sessionStorage.setItem("userInformation", JSON.stringify(values));
                     setStep(3)
                 }}
             >
