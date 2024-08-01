@@ -56,8 +56,8 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
             <Formik
                 initialValues={initValue}
                 onSubmit={values => {
-                    // values['birthDate'] = birthDate
-                    // sessionStorage.setItem("userInformation", JSON.stringify(values));
+                    values['birthDate'] = birthDate
+                    sessionStorage.setItem("userInformation", JSON.stringify(values));
                     setStep(3)
                 }}
             >
