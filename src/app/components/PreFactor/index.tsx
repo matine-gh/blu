@@ -6,13 +6,14 @@ import {Fragment, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {postLoansLoading} from "@/store/postLoans/action";
 import {v4 as uuidv4} from 'uuid';
+import {LoanInterface} from "@/app/components/Loan/loan.interface";
 
 export default function PreFactor({setStep}: (arg: number)=> void) {
 
     const [checked, setChecked] = useState<boolean>(false)
 
     const dispatch = useDispatch();
-    const loanData = JSON.parse(sessionStorage.getItem('selectedLoanInformation'))
+    const loanData: LoanInterface = JSON.parse(sessionStorage.getItem('selectedLoanInformation'))
 
     const postLoanStates = useSelector((state: any)=>state.postLoan);
 
@@ -25,12 +26,12 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
     }, [postLoanStates.isDone]);
 
     const dataArray = [
-        {name: 'مبلغ', value: loanData.amount},
+        {name: 'مبلغ', value: loanData.amount.toLocaleString()},
         {name: 'مدت زمان بازپرداخت', value: loanData.repaymentType[0].name},
         {name: 'تعداد اقساط', value: loanData.repaymentType[0].value},
         {name: 'مبلغ قسط ماهیانه', value: `${calculatePayment(loanData.amount,loanData.interestRate,loanData.repaymentType[0].value)}ریال `},
         {name: 'درصد سود سالیانه', value: `${loanData.interestRate}درصد `},
-        {name: 'مبلغ جریمه دیرکرد', value: calculatePenalty(loanData.amount,loanData.penaltyRate)},
+        {name: 'مبلغ جریمه دیرکرد', value: `${calculatePenalty(loanData.amount,loanData.penaltyRate).toLocaleString()}ریال `},
     ]
 
     return (
@@ -38,7 +39,7 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
             className={"bg-secondary-17 bg-opacity-40 fixed inset-0 w-full h-full z-50"}>
             <div
                 className={"bg-secondary-01 right-0 rounded-2xl z-2 max-w-112 m-auto shadow-lg absolute inset-0 h-fit pb-14 pt-8 text-center max-w-lg md:w-1/2 max-md:w-11/12"}>
-                <div className={'container'+' '+'border-2 rounded-2xl p-8'}>
+                <div className={'container'+' '+'p-8 text-start space-y-3'}>
                     <h1 className={'text-center'}>فرم تایید اطلاعات</h1>
                     {dataArray.map((item)=>{
                         return (
@@ -48,7 +49,7 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
                         )
                     })}
 
-                    <div className="flex items-center">
+                    <div className="flex items-center py-8">
                         <input id="agree-checkbox"
                                type="checkbox"
                                checked={checked}

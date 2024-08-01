@@ -16,9 +16,12 @@
         @apply bg-primary-10 hover:bg-primary text-secondary-01 p-2 rounded-lg
     }
     .submit-button {
-        @apply bg-primary-10 hover:bg-primary text-secondary-01 p-2 rounded-lg my-4 max-h-12 min-w-44 max-md:my-4 w-full
+        @apply bg-primary-10 hover:bg-primary text-secondary-01 p-2 rounded-lg my-4 max-h-12 min-w-44 max-md:my-4 w-full disabled:bg-secondary-03 disabled:cursor-not-allowed
     }
     .formContainer {
         @apply border-4 border-primary rounded-2xl p-8 bg-primary-01
+    }
+    .errorMessage {
+        @apply text-error text-xs
     }
 }
