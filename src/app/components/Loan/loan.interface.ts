@@ -1,5 +1,5 @@
 export interface LoanInterface {
-    id: number,
+    id: string,
     createdDate: number,
     name: string,
     repaymentType: [
