@@ -1,24 +1,9 @@
 import {LoanInterface} from "@/app/components/Loan/loan.interface";
-import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {getLoansLoading} from "@/store/getLoans/action";
 
-export default function HistoryTable() {
-    const [loansHistoryList, setLoansHistoryList] = useState<LoanInterface[]>([])
-
-    const dispatch = useDispatch();
-    const loansHistoryStates = useSelector((state: any)=>state.loansHistory.response);
-
-
-    useEffect(() => {
-        dispatch(getLoansLoading());
-    }, []);
-
-    useEffect(() => {
-        if (loansHistoryStates) {
-            setLoansHistoryList(loansHistoryStates)
-        }
-    }, [loansHistoryStates]);
+interface HistoryTableProps {
+    loansHistoryList: LoanInterface[];
+}
+export default function HistoryTable(loansHistoryList: HistoryTableProps) {
 
     const tableHeaders = [
         'نوع وام',
