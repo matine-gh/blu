@@ -31,7 +31,9 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
         {name: 'مبلغ', value: loanData.amount.toLocaleString()},
         {name: 'مدت زمان بازپرداخت', value: loanData.repaymentType[0].name},
         {name: 'تعداد اقساط', value: loanData.repaymentType[0].value},
-        {name: 'مبلغ قسط ماهیانه', value: `${calculatePayment(loanData.amount,loanData.interestRate,loanData.repaymentType[0].value)}ریال `},
+        {
+            name: 'مبلغ قسط ماهیانه',
+            value: `${calculatePayment(loanData.amount,loanData.interestRate || loanData.percentageRate,loanData.repaymentType[0].value).toLocaleString()}ریال `},
         {name: 'درصد سود سالیانه', value: `${loanData.interestRate}درصد `},
         {name: 'مبلغ جریمه دیرکرد', value: `${calculatePenalty(loanData.amount,loanData.penaltyRate).toLocaleString()}ریال `},
     ]
