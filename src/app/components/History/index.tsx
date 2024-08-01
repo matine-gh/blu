@@ -29,9 +29,18 @@ export default function History() {
     }, [loansHistoryList]);
 
     return (
-        <div>
-            <h1>تاریخچه</h1>
-            <HistoryTable />
+        <div className={'p-8'}>
+            <div className={'flex justify-between items-center'}>
+                <h1>تاریخچه</h1>
+                <a className={'flex items-center text-md text-primary-11 font-bold max-h-10 hover:-translate-x-6 duration-1000'} href={'/'}>
+                    <p>بازگشت به تسهیلات</p>
+                    <Icons name={'back'} />
+                </a>
+            </div>
+            <Suspense fallback={'load'}>
+                <HistoryTable loansHistoryList={loansHistoryList}/>
+            </Suspense>
+
         </div>
     )
 }
