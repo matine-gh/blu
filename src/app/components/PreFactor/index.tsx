@@ -63,7 +63,7 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
                             type={"submit"}
                             disabled={!checked}
                             onClick={()=>{
-                                loanData.id = uuidv4()
+                                loanData.id = Number(uuidv4())
                                 dispatch(postLoansLoading(loanData))
                             }}
                     >ثبت درخواست</button>

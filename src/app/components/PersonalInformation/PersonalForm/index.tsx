@@ -1,7 +1,7 @@
 'use client'
 import {Field, Form, Formik} from 'formik';
 import {DatePicker} from 'zaman';
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {isNidValid} from "@/app/utils/nidValidation";
 
 function validateFirstname(value) {
