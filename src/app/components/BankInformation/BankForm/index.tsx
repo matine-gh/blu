@@ -1,7 +1,8 @@
 'use client'
 import {Field, Form, Formik} from 'formik';
+import {Dispatch, SetStateAction} from "react";
 
-function validateAccountNumber(value) {
+function validateAccountNumber(value: string|null) {
     let error;
     if (!value) {
         error = 'شماره حساب اجباری است';
@@ -9,7 +10,7 @@ function validateAccountNumber(value) {
     }
 }
 
-function validateSheba(value) {
+function validateSheba(value: string|null) {
     let error;
     if (!value) {
         error = 'شماره شبا اجباری است';
@@ -21,7 +22,7 @@ function validateSheba(value) {
         return error;
 }
 
-function validateAnnualAverageAmount(value) {
+function validateAnnualAverageAmount(value: number) {
     let error;
     if (!value) {
         error = 'میانگین ریالی موجودی سالیانه اجباری است';
@@ -34,7 +35,7 @@ function validateAnnualAverageAmount(value) {
 }
 
 
-export default function BankForm({setStep}: (arg: number)=>void) {
+export default function BankForm({setStep}:{setStep :Dispatch<SetStateAction<number>>}) {
 
     return (
         <div className={'formContainer'}>

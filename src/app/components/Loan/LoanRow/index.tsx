@@ -1,11 +1,11 @@
 'use client'
-import {useState} from "react";
+import { useState} from "react";
 import Icons from "../../../../../public/Icons";
 import {LoanRowInterface} from "@/app/components/Loan/LoanRow/loanRow.interface";
 import toFarsiNumber from "@/app/utils/ToFarsiNumbers";
 import ToKeyValue from "@/app/components/Common/ToKeyValue";
 
-export default function LoanRow({step, setStep, ...loan }: LoanRowInterface ) {
+export default function LoanRow({setStep,loan}: LoanRowInterface  ) {
     const [showMore, setShowMore] = useState<boolean>(false);
 
     function onSelectLoan() {

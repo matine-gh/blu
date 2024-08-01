@@ -17,7 +17,7 @@ export default function Main() {
             {step === 2 && <PersonalInformation setStep={setStep} /> }
             {step >= 3 && <BankInformation setStep={setStep} /> }
             {step === 4 && <PreFactor setStep={setStep} />}
-            {step === 5 && <ConfirmPurchase  setStep={setStep}/>}
+            {step === 5 && <ConfirmPurchase/>}
         </div>
     )
 }

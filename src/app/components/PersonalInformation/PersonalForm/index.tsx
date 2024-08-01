@@ -1,18 +1,18 @@
 'use client'
 import {Field, Form, Formik} from 'formik';
 import {DatePicker} from 'zaman';
-import {useState} from "react";
+import {Dispatch, SetStateAction, useState} from "react";
 import {isNidValid} from "@/app/utils/nidValidation";
 
-function validateFirstname(value) {
-    let error;
+function validateFirstname(value: string): string| null {
+    let error : string | null = null;
     if (!value) {
         error = 'نام اجباری است';
-        return error;
     }
+    return (error);
 }
 
-function validateLastname(value) {
+function validateLastname(value: string) {
     let error;
     if (!value) {
         error = 'نام خانوادگی اجباری است';
@@ -20,7 +20,7 @@ function validateLastname(value) {
     }
 }
 
-function validateNid(value) {
+function validateNid(value: string) {
     let error;
     if (!value) {
         error = 'کد ملی اجباری است';
@@ -31,7 +31,7 @@ function validateNid(value) {
     return error;
 }
 
-function validatePhoneNumber(value) {
+function validatePhoneNumber(value: string) {
     let error;
     if (!value) {
         error = 'شماره موبایل اجباری است.';
@@ -43,7 +43,7 @@ function validatePhoneNumber(value) {
     return error;
 }
 
-export default function PersonalForm({setStep}: (arg: number)=> void) {
+export default function PersonalForm({setStep}:{setStep :Dispatch<SetStateAction<number>>}) {
 
     const [birthDate, setBirthDate] = useState<string>('');
     const userInformation = sessionStorage.getItem("userInformation");
@@ -66,19 +66,19 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
                         <div className="col-span-2">
                             <label htmlFor="firstName">*نام</label>
                             <Field name="firstName" validate={validateFirstname} />
-                            {errors.firstName && touched.firstName && <div className={'errorMessage'}>{errors.firstName}</div>}
+                            {errors.firstName && touched.firstName && <div className={'errorMessage'}>{errors.firstName as string}</div>}
                         </div>
 
                         <div className="col-span-2 col-start-4">
                             <label htmlFor="lastName">*نام خانوادگی</label>
                             <Field name="lastName" validate={validateLastname} />
-                            {errors.lastName && touched.lastName && <div className={'errorMessage'}>{errors.lastName}</div>}
+                            {errors.lastName && touched.lastName && <div className={'errorMessage'}>{errors.lastName as string}</div>}
                         </div>
 
                         <div className="col-span-2 row-start-2">
                             <label htmlFor="nid">*کد ملی</label>
                             <Field name="nid" type={'text'} validate={validateNid}/>
-                            {errors.nid && touched.nid && <div className={'errorMessage'}>{errors.nid}</div>}
+                            {errors.nid && touched.nid && <div className={'errorMessage'}>{errors.nid as string}</div>}
                         </div>
 
                         <div className="group col-span-2 col-start-4 row-start-2">
@@ -97,7 +97,7 @@ export default function PersonalForm({setStep}: (arg: number)=> void) {
                         <div className={'col-span-2 row-start-3'}>
                             <label htmlFor="phoneNumber">*شماره تماس</label>
                             <Field name="phoneNumber" type={'text'} validate={validatePhoneNumber} />
-                            {errors.phoneNumber && touched.phoneNumber && <div className={'errorMessage'}>{errors.phoneNumber}</div>}
+                            {errors.phoneNumber && touched.phoneNumber && <div className={'errorMessage'}>{errors.phoneNumber as string}</div>}
                         </div>
 
 

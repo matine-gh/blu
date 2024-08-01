@@ -2,19 +2,19 @@
 import ToKeyValue from "@/app/components/Common/ToKeyValue";
 import calculatePenalty from "@/app/utils/calculatePenalty";
 import calculatePayment from "@/app/utils/calculatePayment";
-import {Fragment, useEffect, useState} from "react";
+import {Dispatch, Fragment, SetStateAction, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {postLoansHydrate, postLoansLoading} from "@/store/postLoans/action";
 import {v4 as uuidv4} from 'uuid';
 import {LoanInterface} from "@/app/components/Loan/loan.interface";
 import {put} from "redux-saga/effects";
 
-export default function PreFactor({setStep}: (arg: number)=> void) {
+export default function PreFactor({setStep}:{setStep :Dispatch<SetStateAction<number>>}) {
 
     const [checked, setChecked] = useState<boolean>(false)
 
     const dispatch = useDispatch();
-    const loanData: LoanInterface = JSON.parse(sessionStorage.getItem('selectedLoanInformation'))
+    const loanData: LoanInterface = JSON.parse(sessionStorage.getItem('selectedLoanInformation') || "[]")
 
     const postLoanStates = useSelector((state: any)=>state.postLoan);
 
@@ -33,9 +33,9 @@ export default function PreFactor({setStep}: (arg: number)=> void) {
         {name: 'تعداد اقساط', value: loanData.repaymentType[0].value},
         {
             name: 'مبلغ قسط ماهیانه',
-            value: `${calculatePayment(loanData.amount,loanData.interestRate || loanData.percentageRate,loanData.repaymentType[0].value).toLocaleString()}ریال `},
+            value: `${calculatePayment(loanData.amount,loanData.interestRate || loanData.percentageRate || 0,loanData.repaymentType[0].value).toLocaleString()}ریال `},
         {name: 'درصد سود سالیانه', value: `${loanData.interestRate}درصد `},
-        {name: 'مبلغ جریمه دیرکرد', value: `${calculatePenalty(loanData.amount,loanData.penaltyRate).toLocaleString()}ریال `},
+        {name: 'مبلغ جریمه دیرکرد', value: `${calculatePenalty(loanData.amount,loanData.penaltyRate || 0).toLocaleString()}ریال `},
     ]
 
     return (

@@ -1,8 +1,8 @@
 import LoansList from "@/app/components/Loan/LoanList";
 import Icons from "../../../../public/Icons";
-import {lazy, Suspense} from "react";
+import {Dispatch, lazy, SetStateAction, Suspense} from "react";
 
-export default function Loan({setStep}: (arg: number)=> void) {
+export default function Loan({setStep}:{setStep :Dispatch<SetStateAction<number>>}) {
     const LoansList = lazy(() => import('@/app/components/Loan/LoanList/index'));
 
     return (

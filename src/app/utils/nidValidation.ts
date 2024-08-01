@@ -1,4 +1,4 @@
- export const isNidValid = code => {
+ export const isNidValid = (code : string) => {
     if (code.length !== 10 || /(\d)(\1){9}/.test(code)) return false;
 
     let sum = 0,

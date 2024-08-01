@@ -1,6 +1,7 @@
 import * as loanInfo from "@/loanInfo.json";
 import LoanRow from "@/app/components/Loan/LoanRow";
-export default function LoansList({setStep}: (arg: number)=> void) {
+import {Dispatch, SetStateAction} from "react";
+export default function LoansList({setStep}:{setStep :Dispatch<SetStateAction<number>>}) {
     return (
         <div className={'container'}>
             <ul className={'space-y-6'}>
@@ -8,7 +9,7 @@ export default function LoansList({setStep}: (arg: number)=> void) {
                     loanInfo.data.map ((loan) => {
                         return(
                             <li key={loan.id}>
-                                <LoanRow {...loan} setStep={setStep}/>
+                                <LoanRow setStep={setStep}   loan={loan}/>
                             </li>
                         )
                     })
