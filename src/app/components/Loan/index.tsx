@@ -9,7 +9,7 @@ export default function Loan({setStep}: (arg: number)=> void) {
         <div>
             <div className={'flex justify-between items-center'}>
                 <h1>تسهیلات</h1>
-                <a className={'primary-button'+' flex items-center text-sm w-fit max-h-10'} href={'/history'}>
+                <a className={'flex items-center text-md text-primary-11 font-bold max-h-10 hover:-translate-x-6 duration-1000'} href={'/history'}>
                     <p>مشاهده تاریخچه</p>
                     <Icons name={'back'} />
                 </a>
