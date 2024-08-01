@@ -34,22 +34,22 @@ export default function HistoryTable() {
                 <tr>{
                     tableHeaders.map((item) => {
                         return (
-                            <th key={item} scope="col" className="px-6 py-3">
+                            <th key={item} scope="col" className="px-6 py-3 text-lg">
                                 {item}
                             </th>
                         )
                     })
                 }</tr>
                 </thead>
-                <tbody>
-                {loansHistoryList.length && loansHistoryList.map((loan) => {
+                <tbody className=" divide-y-2 divide-primary-11">
+                {loansHistoryList.loansHistoryList.map((loan) => {
                     return(
-                        <tr key={loan.id} className=" divide-y-2 divide-primary-11">
-                            <td className="px-6 py-4">
+                        <tr key={loan.id} className={'hover:bg-primary-01'} >
+                            <td className="px-6 py-4 font-semibold">
                                 {loan.name}
                             </td>
                             <td className="px-6 py-4">
-                                {loan.amount}
+                                {loan.amount.toLocaleString()}
                             </td>
                             <td className="px-6 py-4">
                                 {loan.repaymentType[0].value}
