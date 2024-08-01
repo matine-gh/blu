@@ -201,6 +201,172 @@
       "amount": 3000000000,
       "percentageRate": 4,
       "penaltyRate": 3.5
+    },
+    {
+      "id": "1e5be3df-36f1-4d61-9b29-7e1b949cd135",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "1e5be3df-36f1-4d61-9b29-7e1b949cd13511",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "1e5be3df-36f1-4d61-9b29-7e1b949cd135df",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "1e5be3df-36f1-4d61sdsd-9b29-7e1b949cd135",
+      "createdDate": "2019-04-15T10:10:10.789Z",
+      "name": "وام شخصی",
+      "repaymentType": [
+        {
+          "name": "6 ماهه",
+          "value": 6
+        },
+        {
+          "name": "12 ماهه",
+          "value": 12
+        },
+        {
+          "name": "24 ماهه",
+          "value": 24
+        },
+        {
+          "name": "48 ماهه",
+          "value": 48
+        }
+      ],
+      "amount": 1000000000,
+      "interestRate": 18,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "32e4c715-aa90-4471-aff2-cf85d6f5ba0a",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "213ec5a0-91ba-4903-9ff9-a6cab446037a",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "c9940621-8fa5-458b-886e-2fce9548f3be",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "d2553711-77f3-4585-82ae-8c6ac0f5700c",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "468e12a8-448e-4f08-b303-90c0b88a18ef",
+      "createdDate": "2020-08-05T16:20:30.456Z",
+      "name": "وام تجاری",
+      "repaymentType": [
+        {
+          "name": "36 ماهه",
+          "value": 36
+        }
+      ],
+      "amount": 4000000000,
+      "interestRate": 22,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "2daad984-d818-4148-95c6-e069849b3362",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
+    },
+    {
+      "id": "b5b34630-2d1e-4c86-b833-c18c884409c6",
+      "createdDate": "2024-04-28T11:57:17.315Z",
+      "name": "وام ازدواج",
+      "repaymentType": [
+        {
+          "name": "120 ماهه",
+          "value": 120
+        }
+      ],
+      "amount": 3000000000,
+      "percentageRate": 4,
+      "penaltyRate": 3.5
     }
   ]
 }
